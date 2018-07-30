@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SystemRezerwacjiToiToi.Models.Repos;
 
 namespace SystemRezerwacjiToiToi.Controllers
 {
@@ -10,14 +11,15 @@ namespace SystemRezerwacjiToiToi.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new RepoForHome();
+            return View(model.GetOne(1));
         }
 
-        public ActionResult About()
+        public ActionResult FullOption()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            ViewBag.M = "Info";
+            var model = new RepoForHome();
+            return View(model.GetAll());
         }
 
         public ActionResult Contact()

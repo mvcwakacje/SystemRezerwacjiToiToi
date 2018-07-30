@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ToiToiDTO>
+@{
+    ViewBag.Title = "Coś";
+}
+@Html.Partial("_SideBar")
+<h3>@ViewBag.M</h3>
+@if (Model != null && Model.Count() > 0)
+{
+    foreach (var item in Model)
+    {
+        <div>
+            @Html.LabelFor(m => item.ToiToiID)
+            @Html.DisplayFor(m => item.ToiToiID)
+        </div>
+        <div>
+            @Html.LabelFor(m => item.Name)
+            @Html.DisplayFor(m => item.Name)
+        </div>
+        <div>
+            @Html.LabelFor(m => item.IsFull)
+            @Html.DisplayFor(m => item.IsFull)
+        </div>
+    }
+}
+
+
+
